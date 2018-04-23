@@ -1,12 +1,7 @@
-<<<<<<< HEAD
 ormconfig.json
 
 # Logs
 logs
-=======
-lib-cov
-*.seed
->>>>>>> 1d7b61cc595513f6afab9b7f4f6881ed73bf09b0
 *.log
 *.csv
 *.dat
