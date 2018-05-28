@@ -9,37 +9,40 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const typeorm_1 = require("typeorm");
-const user_1 = require("./user");
-let role = class role {
-};
-__decorate([
-    typeorm_1.Column("integer", {
-        generated: true,
-        nullable: false,
-        primary: true,
-        name: "id"
-    }),
-    __metadata("design:type", Number)
-], role.prototype, "id", void 0);
-__decorate([
-    typeorm_1.Column("text", {
-        nullable: true,
-        name: "name"
-    }),
-    __metadata("design:type", String)
-], role.prototype, "name", void 0);
-__decorate([
-    typeorm_1.ManyToMany(type => user_1.user, user => user.roles),
-    typeorm_1.JoinTable({
-        name: "val_user_val_roles_val_role",
-        joinColumn: { name: "val_role_id" },
-        inverseJoinColumn: { name: "val_user_id" }
-    }),
-    __metadata("design:type", Array)
-], role.prototype, "users", void 0);
-role = __decorate([
-    typeorm_1.Entity("val_role", { schema: "public" })
-], role);
+var typeorm_1 = require("typeorm");
+var user_1 = require("./user");
+var role = /** @class */ (function () {
+    function role() {
+    }
+    __decorate([
+        typeorm_1.Column("integer", {
+            generated: true,
+            nullable: false,
+            primary: true,
+            name: "id"
+        }),
+        __metadata("design:type", Number)
+    ], role.prototype, "id", void 0);
+    __decorate([
+        typeorm_1.Column("text", {
+            nullable: true,
+            name: "name"
+        }),
+        __metadata("design:type", String)
+    ], role.prototype, "name", void 0);
+    __decorate([
+        typeorm_1.ManyToMany(function (type) { return user_1.user; }, function (user) { return user.roles; }),
+        typeorm_1.JoinTable({
+            name: "val_user_val_roles_val_role",
+            joinColumn: { name: "val_role_id" },
+            inverseJoinColumn: { name: "val_user_id" }
+        }),
+        __metadata("design:type", Array)
+    ], role.prototype, "users", void 0);
+    role = __decorate([
+        typeorm_1.Entity("val_role", { schema: "public" })
+    ], role);
+    return role;
+}());
 exports.role = role;
 //# sourceMappingURL=role.js.map

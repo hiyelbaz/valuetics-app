@@ -1,11 +1,8 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-const typeorm_linq_repository_1 = require("typeorm-linq-repository");
-require("reflect-metadata");
-class EntityRepository extends typeorm_linq_repository_1.RepositoryBase {
-    constructor(cls) {
-        super(cls);
-    }
-}
-exports.EntityRepository = EntityRepository;
+// // import { RepositoryBase } from "typeorm-linq-repository";
+// import "reflect-metadata";
+// export class EntityRepository<T extends { id: number }> extends RepositoryBase<T> {
+//     public constructor(cls: { new(...parameters): T }) {
+//         super(cls)
+//     }
+// }
 //# sourceMappingURL=entityrepository.js.map

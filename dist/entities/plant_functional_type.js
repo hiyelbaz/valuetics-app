@@ -9,44 +9,47 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const typeorm_1 = require("typeorm");
-const question_1 = require("./question");
-const species_1 = require("./species");
-let plant_functional_type = class plant_functional_type {
-};
-__decorate([
-    typeorm_1.Column("integer", {
-        generated: true,
-        nullable: false,
-        primary: true,
-        name: "id"
-    }),
-    __metadata("design:type", Number)
-], plant_functional_type.prototype, "id", void 0);
-__decorate([
-    typeorm_1.Column("text", {
-        nullable: true,
-        name: "scientific_name"
-    }),
-    __metadata("design:type", String)
-], plant_functional_type.prototype, "scientific_name", void 0);
-__decorate([
-    typeorm_1.Column("jsonb", {
-        nullable: true,
-        name: "common_name"
-    }),
-    __metadata("design:type", Object)
-], plant_functional_type.prototype, "common_name", void 0);
-__decorate([
-    typeorm_1.OneToMany(type => question_1.question, questions => questions.plant_functional_type_id),
-    __metadata("design:type", Array)
-], plant_functional_type.prototype, "questions", void 0);
-__decorate([
-    typeorm_1.OneToMany(type => species_1.species, speciess => speciess.plant_functional_type_id),
-    __metadata("design:type", Array)
-], plant_functional_type.prototype, "speciess", void 0);
-plant_functional_type = __decorate([
-    typeorm_1.Entity("plant_functional_type", { schema: "public" })
-], plant_functional_type);
+var typeorm_1 = require("typeorm");
+var question_1 = require("./question");
+var species_1 = require("./species");
+var plant_functional_type = /** @class */ (function () {
+    function plant_functional_type() {
+    }
+    __decorate([
+        typeorm_1.Column("integer", {
+            generated: true,
+            nullable: false,
+            primary: true,
+            name: "id"
+        }),
+        __metadata("design:type", Number)
+    ], plant_functional_type.prototype, "id", void 0);
+    __decorate([
+        typeorm_1.Column("text", {
+            nullable: true,
+            name: "scientific_name"
+        }),
+        __metadata("design:type", String)
+    ], plant_functional_type.prototype, "scientific_name", void 0);
+    __decorate([
+        typeorm_1.Column("jsonb", {
+            nullable: true,
+            name: "common_name"
+        }),
+        __metadata("design:type", Object)
+    ], plant_functional_type.prototype, "common_name", void 0);
+    __decorate([
+        typeorm_1.OneToMany(function (type) { return question_1.question; }, function (questions) { return questions.plant_functional_type_id; }),
+        __metadata("design:type", Array)
+    ], plant_functional_type.prototype, "questions", void 0);
+    __decorate([
+        typeorm_1.OneToMany(function (type) { return species_1.species; }, function (speciess) { return speciess.plant_functional_type_id; }),
+        __metadata("design:type", Array)
+    ], plant_functional_type.prototype, "speciess", void 0);
+    plant_functional_type = __decorate([
+        typeorm_1.Entity("plant_functional_type", { schema: "public" })
+    ], plant_functional_type);
+    return plant_functional_type;
+}());
 exports.plant_functional_type = plant_functional_type;
 //# sourceMappingURL=plant_functional_type.js.map

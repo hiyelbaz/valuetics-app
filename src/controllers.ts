@@ -1,17 +1,20 @@
-import {answer} from "./entities/answer"
-import {individual} from "./entities/individual"
-import {individual_photo} from "./entities/individual_photo"
-import {notification} from "./entities/notification"
-import {observation} from "./entities/observation"
-import {plant_functional_type} from "./entities/plant_functional_type"
-import {question} from "./entities/question"
-import {site} from "./entities/site"
-import {species} from "./entities/species"
-import {species_photo} from "./entities/species_photo"
-import {role} from "./entities/role"
-import {user} from "./entities/user"
-import {device} from "./entities/device"
-import { BaseController } from "./basecontroller";
+import { answer } from "./entities/answer"
+import { individual } from "./entities/individual"
+import { individual_photo } from "./entities/individual_photo"
+import { notification } from "./entities/notification"
+import { observation } from "./entities/observation"
+import { plant_functional_type } from "./entities/plant_functional_type"
+import { question } from "./entities/question"
+import { site } from "./entities/site"
+import { species } from "./entities/species"
+import { species_photo } from "./entities/species_photo"
+import { role } from "./entities/role"
+import { user } from "./entities/user"
+import { device } from "./entities/device"
+import { BaseController } from "./framework/basecontroller";
+import { Request } from "express";
+import { Response } from "express-serve-static-core";
+import { getConnection } from "typeorm";
 
 export class Users extends BaseController<user>{
     public constructor() {
@@ -23,6 +26,11 @@ export class Roles extends BaseController<role>{
     public constructor() {
         super(role);
     }
+
+    get(req: Request, res: Response) {
+        return super.get(req, res)
+    }
+
 }
 
 export class Devices extends BaseController<device>{
@@ -90,3 +98,17 @@ export class Species extends BaseController<species>{
         super(species);
     }
 }
+
+// export class Test{
+//     async getBurak(req,res,next) {
+//         res.send(await getConnection("readonly").createQueryBuilder(user,"user2")
+//         .select(["user2.name","role2.name"])
+//         .leftJoin("user2.roles","role2")
+//         .getMany())
+//         // return { name: "Burak Büyükatlı" }
+//     }
+
+//     getA(req,res,next){
+//         res.send("A")
+//     }
+// }

@@ -9,9 +9,9 @@
             "request": "launch",
             // "preLaunchTask": "npm: build",
             "name": "Launch Program",
-            "program": "${workspaceFolder}\\dist\\index.js",
+            "program": "${workspaceFolder}/src/index.ts",
             "outFiles": [
-                "${workspaceFolder}/**/*.js"
+                "${workspaceFolder}/dist/**/*.js"
             ]
         },
         
